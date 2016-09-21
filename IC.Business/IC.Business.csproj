@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3ABF850D-382F-418A-8183-6F6051BD236F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IC.Business</RootNamespace>
+    <AssemblyName>IC.Business</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="PushSharp.Apple">
+      <HintPath>..\..\..\..\..\Notification\PushSharp-master\PushSharp-master\PushSharp.Apple\bin\Debug\PushSharp.Apple.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IC.Business.DTO\IC.Business.DTO.csproj">
+      <Project>{EE0964EB-5CC8-410F-80FA-380A7B4EE211}</Project>
+      <Name>IC.Business.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IC.DataAccess\IC.DataAccess.csproj">
+      <Project>{5DD0CDE0-B2B9-459C-8B7E-3E4270DBA39B}</Project>
+      <Name>IC.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IC.DataModels\IC.DataModels.csproj">
+      <Project>{57E5E91B-0060-4EC9-A91D-134BD012F530}</Project>
+      <Name>IC.DataModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IC.DTO\IC.DTO.csproj">
+      <Project>{20742fe7-6e96-40e2-ad14-d1294755ff63}</Project>
+      <Name>IC.DTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IC.Framework\IC.Framework.csproj">
+      <Project>{FE5A2D72-DEF7-4F47-9920-3EFA1C85D37D}</Project>
+      <Name>IC.Framework</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IC.NotificationHandler\IC.NotificationHandler.csproj">
+      <Project>{FEF2F329-EB8A-459F-A64E-92051033B45E}</Project>
+      <Name>IC.NotificationHandler</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
